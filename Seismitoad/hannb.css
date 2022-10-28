@@ -1,7 +1,7 @@
 /* CSSコード */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     padding: 0 20px;
     background: #fff;
@@ -28,6 +28,7 @@
     position: relative;
     z-index: 100;/* 重なり順を一番上にする */
     cursor: pointer;
+    background-color: blue;
   }
   
   /* ハンバーガーメニューのアイコン */
@@ -42,6 +43,7 @@
     background: #333;
     transition: 0.5s;
     position: absolute;
+    z-index: 101;
   }
   
   /* 三本線の一番上の棒の位置調整 */
@@ -77,7 +79,7 @@
     position: fixed;
     top: 0;
     left: 100%; /* メニューを画面の外に飛ばす */
-    z-index: 99;
+    z-index: 98;
     background: #fff;
     transition: .5s;
   }
@@ -90,6 +92,7 @@
   /* アイコンがクリックされたらメニューを表示 */
   #drawer_input:checked ~ .nav_content {
     left: 0;/* メニューを画面に入れる */
+    position: fixed;
 }
 
 .nice-textbox2{
@@ -98,4 +101,8 @@
     padding: 0;
     text-align: center;
     margin: 0 auto;
+}
+.nice{
+  position: fixed;
+  z-index: 101;
 }

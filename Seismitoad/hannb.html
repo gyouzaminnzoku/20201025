@@ -22,7 +22,7 @@
       <div class="logo"></div>
     
       <!-- ハンバーガーメニュー部分 -->
-      <div class="nav"></div>
+      <div class="nav">
     
         <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
         <input id="drawer_input" class="drawer_hidden" type="checkbox">
@@ -47,8 +47,7 @@
         </nav>
       </div>
     
-    
-        <body  class="nice" style="margin: 0;"><!-- overflow: hidden;"-->
+        <body style="margin: 0; overflow: hidden;">
             <a-scene
               vr-mode-ui="enabled: false"
               embedded
@@ -65,15 +64,42 @@
               <a-entity id="nihon2" mb-text position="0.5 1.5 -1" data-text="新.こんにちは世界(script)🌝"></a-entity>
               <a-camera gps-camera rotation-reader> </a-camera>
             </a-scene>
-            <div style="position: fixed; bottom: 150px;">
+            <!--<div style="position: fixed; bottom: 150px;">-->
               <!-- onclickの指定が誤っているので書き直し -->
               <!-- <input type="button" id="b1" value="change" onclick="click1"> -->
-            </div>
+            
         </body>
-      </header>
-   
-      
-    
+        
+    </header>
+         <!--<script>
+          function aframeMutlByte(){
+            //console.log("koko")
+            
+            //nihon.removeAttribute("mb-text");
+            
+            //let hensu=document.createElement("div");
+            //hensu.textContent="hello";
+            //document.getElementById("kk").appendChild(hensu);
+              document.querySelectorAll('[mb-text]').forEach(mb_text2=>{
+                  console.log(mb_text2.dataset.text)
+                  let text  =mb_text2.dataset.text
+                  let text_cnt = text.length
+                  let width = text_cnt*1.4
+                  let height= 1.6
+                  let cvs = document.createElement('canvas')
+                  let ctx = cvs.getContext('2d')
+                  cvs.width = width*100
+                  cvs.height = height*100
+                  ctx.fillStyle = "rgb(50, 200, 30)"
+                  ctx.font = '100pt Arial'
+                  ctx.fillText(text,0,125)
+          
+                  let base64 = cvs.toDataURL("image/png")
+                  mb_text2.innerHTML=`<a-image scale="${(width)/10} ${height/10} 1" src="${base64}"></a-image>`
+              })
+          }
+              
+          </script>-->
     
     <script src="kami.js"></script>
 
